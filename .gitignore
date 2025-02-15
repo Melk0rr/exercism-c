@@ -1,0 +1,7 @@
+.exercism/
+test-framework/
+
+HELP.md
+tests.out
+test_*.c
+makefile
