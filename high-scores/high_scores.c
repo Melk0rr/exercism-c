@@ -1,6 +1,4 @@
 #include "high_scores.h"
-#include <stddef.h>
-#include <stdint.h>
 
 // Return the latest score.
 int32_t latest(const int32_t *scores, size_t scores_len)
@@ -29,7 +27,6 @@ int32_t personal_best(const int32_t *scores, size_t scores_len)
 // Return the number of scores written.
 size_t personal_top_three(const int32_t *scores, size_t scores_len, int32_t *output)
 {
-  size_t output_len = 0;
   for (size_t i = 0; i < scores_len; i++) {
     if (scores[i] > output[0])
     {
@@ -43,13 +40,7 @@ size_t personal_top_three(const int32_t *scores, size_t scores_len, int32_t *out
 
     } else if (scores[i] > output[2])
       output[2] = scores[i];
-
-    else
-      continue;
-
-    if (output_len < 3)
-      ++output_len;
   }
 
-  return output_len;
+  return scores_len > 3 ? 3 : scores_len;
 }
