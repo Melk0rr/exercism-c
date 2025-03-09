@@ -3,7 +3,7 @@
 
 int toLowerCase(char ch)
 {
-  return (ch >= 'A' && ch <= 'Z') ? ch + ('a' - 'A') : ch;
+  return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
 }
 
 bool is_pangram(const char *sentence) {
