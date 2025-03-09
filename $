@@ -1,0 +1,18 @@
+#include "hamming.h"
+#include <string.h>
+
+int compute(const char *lhs, const char *rhs)
+{
+  int ham_dist = 0;
+
+  if (strlen(lhs) != strlen(rhs))
+    return -1;
+
+  for (unsigned int i; i < strlen(lhs); i++)
+  {
+    if (lhs[i] != rhs[i])
+      ham_dist++;
+  }
+
+  return ham_dist;
+}
