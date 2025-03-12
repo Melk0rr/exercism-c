@@ -3,15 +3,14 @@
 
 bool is_armstrong_number(int candidate)
 {
-  int original = candidate;
-  int sum = 0;
+  int sum = candidate;
   unsigned int n = floor(log10(candidate) + 1);
 
-  while (original != 0)
+  while (candidate)
   {
-    sum += pow(original % 10, n);
-    original /= 10;
+    sum -= pow(candidate % 10, n);
+    candidate /= 10;
   }
   
-  return candidate == sum;
+  return sum == 0;
 }
