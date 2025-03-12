@@ -1,27 +1,15 @@
 #include <math.h>
 #include "armstrong_numbers.h"
 
-int count_digits(int num)
-{
-  int count = 0;
-  while (num != 0)
-  {
-    num /= 10;
-    count++;
-  }
-  return count;
-}
-
 bool is_armstrong_number(int candidate)
 {
   int original = candidate;
   int sum = 0;
-  unsigned int n = count_digits(candidate);
+  unsigned int n = floor(log10(candidate) + 1);
 
   while (original != 0)
   {
-    unsigned short int digit = original % 10;
-    sum += pow(digit, n);
+    sum += pow(original % 10, n);
     original /= 10;
   }
   
