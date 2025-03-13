@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "pangram.h"
 
 int toLowerCase(char ch)
