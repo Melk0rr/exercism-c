@@ -9,28 +9,30 @@ static robot_position_t movements[] = {
 
 robot_direction_t get_next_direction(robot_direction_t current, char command)
 {
+  robot_direction_t new_direction = DIRECTION_NORTH;
   switch (current)
   {
   case DIRECTION_NORTH:
-    return command == 'R' ? DIRECTION_EAST : DIRECTION_WEST;
+    new_direction = command == 'R' ? DIRECTION_EAST : DIRECTION_WEST;
     break;
 
   case DIRECTION_EAST:
-    return command == 'R' ? DIRECTION_SOUTH : DIRECTION_NORTH;
+    new_direction = command == 'R' ? DIRECTION_SOUTH : DIRECTION_NORTH;
     break;
 
   case DIRECTION_SOUTH:
-    return command == 'R' ? DIRECTION_WEST : DIRECTION_EAST;
+     new_direction = command == 'R' ? DIRECTION_WEST : DIRECTION_EAST;
     break;
 
   case DIRECTION_WEST:
-    return command == 'R' ? DIRECTION_NORTH : DIRECTION_SOUTH;
+     new_direction = command == 'R' ? DIRECTION_NORTH : DIRECTION_SOUTH;
     break;
 
   default:
-    return DIRECTION_MAX;
+    new_direction = DIRECTION_MAX;
     break;
   }
+  return new_direction;
 }
 
 robot_status_t robot_create(robot_direction_t direction, int x, int y)
