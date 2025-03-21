@@ -20,6 +20,7 @@ typedef struct {
    robot_position_t position;
 } robot_status_t;
 
+robot_direction_t get_next_direction(robot_direction_t current, char command);
 robot_status_t robot_create(robot_direction_t direction, int x, int y);
 void robot_move(robot_status_t *robot, const char *commands);
 
