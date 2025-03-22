@@ -1,5 +1,6 @@
 # INFO: Clang format customization
 
+ColumnLimit: 120
 BreakBeforeBraces: Custom
 BraceWrapping:
   AfterClass:              true
