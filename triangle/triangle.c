@@ -18,5 +18,5 @@ bool is_isosceles(triangle_t triangle)
 
 bool is_scalene(triangle_t triangle)
 {
-  return is_triangle(triangle) && (triangle.a != triangle.b && triangle.a != triangle.c && triangle.b != triangle.c);
+  return is_triangle(triangle) && !(is_isosceles(triangle));
 }
