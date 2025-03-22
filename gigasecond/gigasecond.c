@@ -1,6 +1,6 @@
 #include "gigasecond.h"
 
-#define GIGASECOND 1000000000
+#define GIGASECOND 1e9
 
 void gigasecond(time_t input, char *output, size_t size)
 {
