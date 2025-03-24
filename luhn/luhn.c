@@ -11,21 +11,24 @@ bool luhn(const char *num)
     return false;
 
   char doubled_num[strlen(num)];
-  unsigned int non_digit_counter = 0;
-  for (unsigned int i = 0; num[i] != '\0'; i++)
+  unsigned int sum = 0;
+  unsigned int digit_counter = 0;
+  for (int i = strlen(num) - 1; i >= 0; i--)
   {
-    char digit = num[i] - '0';
     if (!is_valid_char(num[i]))
       return false;
 
-    if (num[i] == 32)
-      ++non_digit_counter;
+    doubled_num[i] = num[i];
+    if (num[i] != 32)
+    {
+      unsigned int doubled = num[i] - '0';
+      if (++digit_counter % 2 == 0) 
+        doubled = double_digit(doubled);
 
-    else if (i % 2 == 0 || (i - non_digit_counter) % 2 == 0)
-      digit = double_digit(digit);
-
-    doubled_num[i] = (char)(digit + '0');
+      doubled_num[i] = (char)(doubled + '0');
+      sum += doubled_num[i] - '0';
+    }
   }
 
-  return true;
+  return (digit_counter > 1) && (sum % 10 == 0);
 }
