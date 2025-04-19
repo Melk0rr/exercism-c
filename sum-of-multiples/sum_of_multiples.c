@@ -13,4 +13,23 @@ mult_t multiple(unsigned int factor, unsigned int limit)
   }
   return factor_mult;
 }
-unsigned int sum(const unsigned int *factors, const size_t number_of_factors, const unsigned int limit) {}
+
+unsigned int sum(const unsigned int *factors, const size_t number_of_factors, const unsigned int limit)
+{
+  mult_t multiple_arrays[number_of_factors];
+  unsigned int total_size = 0;
+
+  for (unsigned int i = 0; i < number_of_factors; i++)
+  {
+    multiple_arrays[i] = multiple(factors[i], limit);
+    total_size += multiple_arrays[i].size;
+  }
+
+  mult_t merged = merge_mult(multiple_arrays);
+  unsigned int sum = 0;
+
+  for (unsigned int i; i < merged.size; i++)
+    sum += merged.array[i];
+
+  return sum;
+}
