@@ -3,7 +3,12 @@
 
 #include <stddef.h>
 
-int *multiple(unsigned int factor, unsigned int limit);
+typedef struct mult_t {
+  unsigned int *array; 
+  unsigned int size;
+} mult_t;
+
+mult_t multiple(unsigned int factor, unsigned int limit);
 unsigned int sum(const unsigned int *factors, const size_t number_of_factors,
                  const unsigned int limit);
 
