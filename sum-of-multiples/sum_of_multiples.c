@@ -14,6 +14,8 @@ mult_t multiple(unsigned int factor, unsigned int limit)
   return factor_mult;
 }
 
+mult_t merge_mult(mult_t *mults) {}
+
 unsigned int sum(const unsigned int *factors, const size_t number_of_factors, const unsigned int limit)
 {
   mult_t multiple_arrays[number_of_factors];
