@@ -12,9 +12,6 @@ int str_to_int(char *str)
   return number;
 }
 
-int hour(clock_t clock) { return str_to_int(clock.text); }
-int minute(clock_t clock) { return str_to_int(clock.text + 3); }
-
 clock_t clock_create(int hour, int minute)
 {
   int total_minutes = (((hour % 24) * 60 + minute) % MIN_PER_DAY + MIN_PER_DAY) % MIN_PER_DAY;
@@ -24,6 +21,6 @@ clock_t clock_create(int hour, int minute)
   return new_clock;
 }
 
-clock_t clock_add(clock_t clock, int minute_add) { return clock_create(hour(clock), minute(clock) + minute_add); }
-clock_t clock_subtract(clock_t clock, int minute_add) { return clock_create(hour(clock), minute(clock) - minute_add); }
+clock_t clock_add(clock_t clock, int minute_add) { return clock_create(str_to_int(clock.text), str_to_int(clock.text + 3) + minute_add); }
+clock_t clock_subtract(clock_t clock, int minute_add) { return clock_create(str_to_int(clock.text), str_to_int(clock.text + 3) - minute_add); }
 bool clock_is_equal(clock_t a, clock_t b) { return !strcmp(a.text, b.text); }
