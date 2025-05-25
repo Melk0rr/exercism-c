@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+// TODO: check malloc size (30) + strcpy
 char *count(const char *dna_strand)
 {
   int tracker[] = {
