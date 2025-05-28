@@ -22,6 +22,7 @@ typedef struct {
    amino_acid_t amino_acids[MAX_AMINO_ACIDS];
 } protein_t;
 
+unsigned int hash_codon(const char *codon);
 protein_t protein(const char *const rna);
 
 #endif
