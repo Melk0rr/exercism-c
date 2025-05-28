@@ -3,9 +3,9 @@
 #include <string.h>
 
 const amino_acid_t amino_table[] = {
-    [156] = Methionine, [85] = Phenylalanine, [152] = Phenylalanine, [150] = Leucine,    [103] = Leucine,
-    [146] = Serine,     [128] = Serine,       [126] = Serine,        [120] = Serine,     [100] = Tyrosine,
-    [147] = Tyrosine,   [98] = Cysteine,      [151] = Cysteine,      [155] = Tryptophan,
+    [136] = Methionine, [85] = Phenylalanine, [152] = Phenylalanine, [150] = Leucine,    [118] = Leucine,
+    [141] = Serine,     [123] = Serine,       [121] = Serine,        [97] = Serine,     [110] = Tyrosine,
+    [148] = Tyrosine,   [151] = Cysteine,      [133] = Cysteine,      [99] = Tryptophan,
 };
 
 unsigned int hash_codon(const char *codon)
@@ -13,7 +13,7 @@ unsigned int hash_codon(const char *codon)
   unsigned int hash = 0;
   int c;
   while ((c = *codon++))
-    hash = ((hash << 4) + hash) + c;
+    hash = ((hash << 5) + hash) + c;
 
   return hash % codon[1] + codon[0];
 }
