@@ -2,10 +2,19 @@
 #include <stdio.h>
 #include <string.h>
 
-const amino_acid_t amino_table[] = {
-    [136] = Methionine, [85] = Phenylalanine, [152] = Phenylalanine, [150] = Leucine,    [118] = Leucine,
-    [141] = Serine,     [123] = Serine,       [121] = Serine,        [97] = Serine,     [110] = Tyrosine,
-    [148] = Tyrosine,   [151] = Cysteine,      [133] = Cysteine,      [99] = Tryptophan,
+const amino_acid_t amino_table[86][86][86] = {
+  ['A'] = { ['U'] = { ['G'] = Methionine } },
+  ['U'] = { 
+    ['A'] = {
+      ['A'] = -1,
+      ['C'] = Tyrosine,
+      ['G'] = -1,
+      ['U'] = Tyrosine
+    },
+    ['C'] = {},
+    ['G'] = {}, 
+    ['U'] = {}
+  }
 };
 
 unsigned int hash_codon(const char *codon)
