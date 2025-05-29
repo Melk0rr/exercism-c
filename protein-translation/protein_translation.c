@@ -10,12 +10,7 @@ const amino_acid_t amino_table[] = {
 
 unsigned int hash_codon(const char *codon)
 {
-  unsigned int hash = 0;
-  int c;
-  while ((c = *codon++))
-    hash = ((hash << 5) + hash) + c;
-
-  return hash % codon[1] + codon[0];
+  return ((codon[0] << 4) | (codon[1] << 8) | (codon[2] << 16)) / 10000;
 }
 
 protein_t protein(const char *const rna)
@@ -29,11 +24,11 @@ protein_t protein(const char *const rna)
       const char *codon = rna + i * 3;
       unsigned int codon_hash = hash_codon(codon);
       printf("%d", codon_hash);
-
-      if (codon_hash == 86 || codon_hash == 145 || codon_hash == 149)
-        return res;
-
-      res.amino_acids[res.count++] = amino_table[codon_hash];
+      //
+      // if (codon_hash == 79 || codon_hash == 90 || codon_hash == 152)
+      //   return res;
+      //
+      // res.amino_acids[res.count++] = amino_table[codon_hash];
     }
     res.valid = true;
   }
