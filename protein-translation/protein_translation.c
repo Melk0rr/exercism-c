@@ -3,24 +3,13 @@
 #include <string.h>
 
 const amino_acid_t amino_table[86][86][86] = {
-  ['A'] = { ['U'] = { ['G'] = Methionine } },
-  ['U'] = { 
-    ['A'] = {
-      ['A'] = -1,
-      ['C'] = Tyrosine,
-      ['G'] = -1,
-      ['U'] = Tyrosine
-    },
-    ['C'] = {},
-    ['G'] = {}, 
-    ['U'] = {}
-  }
-};
+    ['A'] = {['U'] = {['G'] = Methionine}},
+    ['U'] = {['A'] = {['A'] = -1, ['C'] = Tyrosine, ['G'] = -1, ['U'] = Tyrosine},
+             ['C'] = {['A'] = Serine, ['C'] = Serine, ['G'] = Serine, ['U'] = Serine},
+             ['G'] = {['A'] = -1, ['C'] = Cysteine, ['G'] = Tryptophan, ['U'] = Cysteine},
+             ['U'] = {['A'] = Leucine, ['C'] = Phenylalanine, ['G'] = Leucine, ['U'] = Phenylalanine}}};
 
-unsigned int hash_codon(const char *codon)
-{
-  return ((codon[0] << 4) | (codon[1] << 8) | (codon[2] << 16)) / 10000;
-}
+unsigned int hash_codon(const char *codon) { return ((codon[0] << 4) | (codon[1] << 8) | (codon[2] << 16)) / 10000; }
 
 protein_t protein(const char *const rna)
 {
