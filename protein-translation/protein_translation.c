@@ -17,8 +17,11 @@ protein_t protein(const char *const rna)
     for (unsigned int i = 0; i < strlen(rna) / 3; i++)
     {
       const char *codon = rna + i * 3;
-      res.amino_acids[res.count++] = amino_table[(int)codon[0]][(int)codon[1]][(int)codon[2]];
-    }
+      amino_acid_t amino = amino_table[(int)codon[0]][(int)codon[1]][(int)codon[2]];
+
+      if (amino == -1)
+        return res; 
+      res.amino_acids[res.count++] = amino; 
     res.valid = true;
   }
 
