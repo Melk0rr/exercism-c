@@ -1,33 +1,30 @@
 #include "protein_translation.h"
 #include <string.h>
 
-const amino_acid_t amino_table[86][86][86] = {
-    ['A'] = {['U'] = {['G'] = Methionine}},
-    ['U'] = {['A'] = {['A'] = -1, ['C'] = Tyrosine, ['G'] = -1, ['U'] = Tyrosine},
-             ['C'] = {['A'] = Serine, ['C'] = Serine, ['G'] = Serine, ['U'] = Serine},
-             ['G'] = {['A'] = -1, ['C'] = Cysteine, ['G'] = Tryptophan, ['U'] = Cysteine},
-             ['U'] = {['A'] = Leucine, ['C'] = Phenylalanine, ['G'] = Leucine, ['U'] = Phenylalanine}}};
+#define UPPER_A 65
+
+const amino_acid_t amino_table[26][26][26] = {
+    [0] = {[20] = {[6] = Methionine}},
+    [20] = {[0] = {[0] = -1, [2] = Tyrosine, [6] = -1, [20] = Tyrosine},
+            [2] = {[0] = Serine, [2] = Serine, [6] = Serine, [20] = Serine},
+            [6] = {[0] = -1, [2] = Cysteine, [6] = Tryptophan, [20] = Cysteine},
+            [20] = {[0] = Leucine, [2] = Phenylalanine, [6] = Leucine, [20] = Phenylalanine}}};
 
 protein_t protein(const char *const rna)
 {
-  protein_t res = {.valid = false, .count = 0};
-
-  if (strlen(rna) % 3 == 0)
+  protein_t res = {.valid = true, .count = 0};
+  for (unsigned int i = 0; i < strlen(rna); i += 3)
   {
-    for (unsigned int i = 0; i < strlen(rna) / 3; i++)
-    {
-      const char *codon = rna + i * 3;
-      amino_acid_t amino = amino_table[(int)codon[0]][(int)codon[1]][(int)codon[2]];
+    const char *codon = rna + i;
+    amino_acid_t amino = amino_table[codon[0] - UPPER_A][codon[1] - UPPER_A][codon[2] - UPPER_A];
 
-      if ((int)amino == -1)
-      {
-        res.valid = true;
-        return res; 
-      }
+    if (!amino)
+      res.valid = false;
 
-      res.amino_acids[res.count++] = amino; 
-    }
-    res.valid = true;
+    if ((int)amino < 1)
+      break;
+
+    res.amino_acids[res.count++] = amino;
   }
 
   return res;
