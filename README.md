@@ -6,6 +6,7 @@ My exercism.org C exercises
 - Exercise 28 - 80 => Medium
 - Exercise 81 - 83 => Hard
 
+
 | Easy | Medium | Hard |
 | --------------- | --------------- | --------------- |
 | [hello-world](./hello-world/README.md) | [luhn](./luhn/README.md) |  |
@@ -39,5 +40,8 @@ My exercism.org C exercises
 
 ## Concepts
 ### Programmation concepts
+#### Binary search
+- [binary-search](./binary-search/README.md)
+- [square-root](./square-root/README.md)
 
 ### Subjects
