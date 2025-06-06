@@ -42,6 +42,7 @@ My exercism.org C exercises
 ### Programmation concepts
 <details>
 <summary><b>Binary search</b></summary>
+
 - [binary-search](./binary-search/README.md)
 - [square-root](./square-root/README.md)
 </details>
