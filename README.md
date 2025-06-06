@@ -8,12 +8,36 @@ My exercism.org C exercises
 
 | Easy | Medium | Hard |
 | --------------- | --------------- | --------------- |
-| [luhn](./luhn/README.md) | Item2.1 | Item3.1 |
-| [allergies](./allergies/README.md) | Item2.2 | Item3.2 |
-| [complex-numbers](./complex-numbers/README.md)  | Item2.3 | Item3.3 |
-| [sum-of-multiples](./sum-of-multiples/README.md)  | Item2.4 | Item3.4 |
+| [hello-world](./hello-world/README.md) | [luhn](./luhn/README.md) |  |
+| [leap](./leap/README.md) | [allergies](./allergies/README.md) |  |
+| [difference-of-square](./difference-of-squares/README.md) | [complex-numbers](./complex-numbers/README.md) |  |
+| [grains](./grains/README.md) | [sum-of-multiples](./sum-of-multiples/README.md) |  |
+| [resistor-color](./resistor-color/README.md) | [clock](./clock/README.md) |  |
+| [collatz-conjecture](./collatz-conjecture/README.md) | [rotational-cipher](./rotational-cipher/README.md) |  |
+| [queen-attack](./queen-attack/README.md) | [sieve](./sieve/README.md) |  |
+| [darts](./darts/README.md) | [square-root](./square-root/README.md) |  |
+| [resistor-color-duo](./resistor-color-duo/README.md) | [reverse-string](./reverse-string/README.md) |  |
+| [hamming](./hamming/README.md) | [nucleotide-count](./nucleotide-count/README.md) |  |
+| [space-age](./space-age/README.md) | [protein-translation](./protein-translation/README.md) |  |
+| [rna-transcription](./rna-transcription/README.md) | [beer-song](./beer-song/README.md) |  |
+| [binary](./binary/README.md) | [prime-factors](./prime-factors/README.md) |  |
+| [eliuds-egg](./eliuds-eggs/README.md) | [nth-prime](./nth-prime/README.md) |  |
+| [two-fer](./two-fer/README.md) | [all-your-base](./all-your-base/README.md) |  |
+| [raindrops](./raindrops/README.md) |  |  |
+| [dnd-characters](./dnd-character/README.md) |  |  |
+| [perfect-numbers](./perfect-numbers/README.md) |  |  |
+| [high-scores](./high-scores/README.md) |  |  |
+| [pangram](./pangram/README.md) |  |  |
+| [resistor-color-trio](./resistor-color-trio/README.md) |  |  |
+| [armstrong-number](./armstrong-numbers/README.md) |  |  |
+| [isogram](./isogram/README.md) |  |  |
+| [binary-search](./binary-search/README.md) |  |  |
+| [robot-simulator](./robot-simulator/README.md) |  |  |
+| [gigasecond](./gigasecond/README.md) |  |  |
+| [triangle](./triangle/README.md) |  |  |
 
 
 ## Concepts
 ### Programmation concepts
+
 ### Subjects
