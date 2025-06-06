@@ -40,8 +40,10 @@ My exercism.org C exercises
 
 ## Concepts
 ### Programmation concepts
-#### Binary search
+<details>
+<summary><b>Binary search</b></summary>
 - [binary-search](./binary-search/README.md)
 - [square-root](./square-root/README.md)
+</details>
 
 ### Subjects
