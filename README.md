@@ -70,3 +70,10 @@ My exercism.org C exercises
 - [resistor-color-duo](./resistor-color-duo/README.md)
 - [resistor-color-trio](./resistor-color-trio/README.md)
 </details>
+
+<details>
+<summary><b>ADN/RNA/Proteins</b></summary>
+
+- [rna-transcription](./rna-transcription/README.md)
+- [protein-translation](./protein-translation/README.md)
+</details>
