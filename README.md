@@ -48,3 +48,10 @@ My exercism.org C exercises
 </details>
 
 ### Subjects
+
+<details>
+<summary><b>Prime numbers</b></summary>
+
+- [prime-factors](./prime-factors/README.md)
+- [nth-prime](./nth-prime/README.md)
+</details>
