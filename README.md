@@ -55,3 +55,9 @@ My exercism.org C exercises
 - [prime-factors](./prime-factors/README.md)
 - [nth-prime](./nth-prime/README.md)
 </details>
+
+<details>
+<summary><b>Complex numbers</b></summary>
+
+- [complex-numbers](./complex-numbers/README.md)
+</details>
