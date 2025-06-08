@@ -58,17 +58,18 @@ My exercism.org C exercises
 ### Subjects
 
 <details>
-<summary><b>ADN/RNA/Proteins</b></summary>
+<summary><b>Complex numbers</b></summary>
+
+- [complex-numbers](./complex-numbers)
+</details>
+
+<details>
+<summary><b>DNA/RNA/Proteins</b></summary>
 
 - [rna-transcription](./rna-transcription)
 - [protein-translation](./protein-translation)
 - [hamming](./hamming)
-</details>
-
-<details>
-<summary><b>Complex numbers</b></summary>
-
-- [complex-numbers](./complex-numbers)
+- [nucleotide-count](./nucleotide-count)
 </details>
 
 <details>
