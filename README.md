@@ -76,4 +76,5 @@ My exercism.org C exercises
 
 - [rna-transcription](./rna-transcription/README.md)
 - [protein-translation](./protein-translation/README.md)
+- [hamming](./hamming/README.md)
 </details>
