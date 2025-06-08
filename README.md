@@ -22,7 +22,7 @@ My exercism.org C exercises
 | [space-age](./space-age) | [protein-translation](./protein-translation) |  |
 | [rna-transcription](./rna-transcription) | [beer-song](./beer-song) |  |
 | [binary](./binary) | [prime-factors](./prime-factors) |  |
-| [eliuds-egg](./eliuds-eggs) | [nth-prime](./nth-prime) |  |
+| [eliuds-eggs](./eliuds-eggs) | [nth-prime](./nth-prime) |  |
 | [two-fer](./two-fer) | [all-your-base](./all-your-base) |  |
 | [raindrops](./raindrops) |  |  |
 | [dnd-characters](./dnd-character) |  |  |
@@ -46,6 +46,14 @@ My exercism.org C exercises
 - [binary-search](./binary-search)
 - [square-root](./square-root)
 </details>
+
+<details>
+<summary><b>Binary</b></summary>
+
+- [binary](./binary)
+- [eliuds-eggs](./eliuds-eggs)
+</details>
+
 
 ### Subjects
 
