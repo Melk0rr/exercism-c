@@ -40,12 +40,6 @@ My exercism.org C exercises
 
 ## Concepts
 ### Programmation concepts
-<details>
-<summary><b>Binary search</b></summary>
-
-- [binary-search](./binary-search)
-- [square-root](./square-root)
-</details>
 
 <details>
 <summary><b>Binary</b></summary>
@@ -54,8 +48,28 @@ My exercism.org C exercises
 - [eliuds-eggs](./eliuds-eggs)
 </details>
 
+<details>
+<summary><b>Binary search</b></summary>
+
+- [binary-search](./binary-search)
+- [square-root](./square-root)
+</details>
 
 ### Subjects
+
+<details>
+<summary><b>ADN/RNA/Proteins</b></summary>
+
+- [rna-transcription](./rna-transcription)
+- [protein-translation](./protein-translation)
+- [hamming](./hamming)
+</details>
+
+<details>
+<summary><b>Complex numbers</b></summary>
+
+- [complex-numbers](./complex-numbers)
+</details>
 
 <details>
 <summary><b>Prime numbers</b></summary>
@@ -65,24 +79,9 @@ My exercism.org C exercises
 </details>
 
 <details>
-<summary><b>Complex numbers</b></summary>
-
-- [complex-numbers](./complex-numbers)
-</details>
-
-
-<details>
 <summary><b>Resistors</b></summary>
 
 - [resistor-color](./resistor-color)
 - [resistor-color-duo](./resistor-color-duo)
 - [resistor-color-trio](./resistor-color-trio)
-</details>
-
-<details>
-<summary><b>ADN/RNA/Proteins</b></summary>
-
-- [rna-transcription](./rna-transcription)
-- [protein-translation](./protein-translation)
-- [hamming](./hamming)
 </details>
