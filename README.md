@@ -40,6 +40,11 @@ My exercism.org C exercises
 
 ## Concepts
 ### Programmation concepts
+<details>
+<summary><b>Base</b></summary>
+
+- [all-your-base](./all-your-base)
+</details>
 
 <details>
 <summary><b>Binary</b></summary>
