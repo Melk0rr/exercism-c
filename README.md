@@ -60,6 +60,26 @@ My exercism.org C exercises
 - [square-root](./square-root)
 </details>
 
+<details>
+<summary><b>Bit flags</b></summary>
+
+- [allergies](./allergies)
+</details>
+
+<details>
+<summary><b>Bit flags</b></summary>
+
+- [allergies](./allergies)
+</details>
+
+<details>
+<summary><b>String format</b></summary>
+
+- [two-fer](./twho-fer)
+- [beer-song](./beer-song)
+- [raindrops](./raindrops)
+</details>
+
 ### Subjects
 
 <details>
@@ -82,6 +102,7 @@ My exercism.org C exercises
 
 - [prime-factors](./prime-factors)
 - [nth-prime](./nth-prime)
+- [sieve](./sieve)
 </details>
 
 <details>
