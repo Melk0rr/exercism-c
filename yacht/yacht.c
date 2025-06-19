@@ -7,6 +7,9 @@ typedef int (*ctg_cmd_t)(dice_t);
 unsigned char *count_digits(dice_t dice)
 {
   unsigned char *counts = calloc(6, sizeof(int));
+  if (counts == NULL)
+    abort();
+
   for (unsigned char i = 0; i < 5; i++)
     counts[dice.faces[i]]++;
 
