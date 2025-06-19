@@ -1,5 +1,7 @@
 #include "yacht.h"
 #include <stdlib.h>
+typedef bool (*callback_t)(unsigned char, unsigned char *);
+typedef int (*ctg_cmd_t)(dice_t);
 
 // Core functions
 unsigned char *count_digits(dice_t dice)
