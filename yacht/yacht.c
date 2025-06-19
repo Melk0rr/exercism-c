@@ -51,6 +51,7 @@ int yacht(dice_t dice) { return (dice.faces[0] == dice.faces[1] && dice.faces[0]
 static const ctg_cmd_t command_lookup[] = {
   [ONES] = ones                      , [TWOS] = twos                , [THREES] = threes        , [FOURS] = fours,
   [FIVES] = fives                    , [SIXES] = sixes              , [FULL_HOUSE] = full_house, [FOUR_OF_A_KIND] = four_of_a_kind,
-  [LITTLE_STRAIGHT] = little_straight, [BIG_STRAIGHT] = big_straight, [CHOICE] = choice        , [YACHT] = yacht};
+  [LITTLE_STRAIGHT] = little_straight, [BIG_STRAIGHT] = big_straight, [CHOICE] = choice        , [YACHT] = yacht
+};
 
 int score(dice_t dice, category_t category) { return command_lookup[category](dice); }
