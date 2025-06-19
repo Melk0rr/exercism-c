@@ -18,15 +18,15 @@ static unsigned char *count_digits(dice_t dice)
   return counts;
 }
 
-unsigned char full_straight(dice_t dice, callback_t cb, unsigned char default_value, char condition_value)
+static int get_score_mult(dice_t dice, callback_t cb, unsigned char default_score_mult)
 {
   unsigned char *counts = count_digits(dice);
   for (unsigned char i = 0; i < 6; i++)
     if (cb(i, counts))
-      return (condition_value == -1) ? i : condition_value;
+      return (default_score_mult == 0) ? i + 1 : 0;
 
-  return default_value;
   free(counts);
+  return default_score_mult;
 }
 
 // Callbacks
