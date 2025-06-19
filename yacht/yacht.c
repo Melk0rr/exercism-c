@@ -26,6 +26,7 @@ unsigned char full_straight(dice_t dice, callback_t cb, unsigned char default_va
       return (condition_value == -1) ? i : condition_value;
 
   return default_value;
+  free(counts);
 }
 
 // Callbacks
