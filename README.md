@@ -80,6 +80,18 @@ My exercism.org C exercises
 - [raindrops](./raindrops)
 </details>
 
+<details>
+<summary><b>Lookup table</b></summary>
+
+- [yacht](./yacht)
+</details>
+
+<details>
+<summary><b>Function pointer</b></summary>
+
+- [yacht](./yacht)
+</details>
+
 ### Subjects
 
 <details>
