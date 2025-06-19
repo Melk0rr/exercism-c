@@ -13,7 +13,7 @@ unsigned char *count_digits(dice_t dice)
     abort();
 
   for (unsigned char i = 0; i < 5; i++)
-    counts[dice.faces[i]]++;
+    counts[dice.faces[i] - 1]++;
 
   return counts;
 }
@@ -21,7 +21,7 @@ unsigned char *count_digits(dice_t dice)
 unsigned char full_straight(dice_t dice, callback_t cb, unsigned char default_value, char condition_value)
 {
   unsigned char *counts = count_digits(dice);
-  for (unsigned char i = 1; i < 7; i++)
+  for (unsigned char i = 0; i < 6; i++)
     if (cb(i, counts))
       return (condition_value == -1) ? i : condition_value;
 
