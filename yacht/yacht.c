@@ -6,7 +6,7 @@ typedef int (*ctg_cmd_t)(dice_t);
 // Core functions
 unsigned char *count_digits(dice_t dice)
 {
-  unsigned char *counts = malloc(7 * sizeof(int));
+  unsigned char *counts = calloc(6, sizeof(int));
   for (unsigned char i = 0; i < 5; i++)
     counts[dice.faces[i]]++;
 
