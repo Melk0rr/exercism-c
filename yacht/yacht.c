@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 // Core functions
-int *count_digits(dice_t dice)
+unsigned char *count_digits(dice_t dice)
 {
-  int *counts = malloc(7 * sizeof(int));
+  unsigned char *counts = malloc(7 * sizeof(int));
   for (unsigned char i = 0; i < 5; i++)
     counts[dice.faces[i]]++;
 
@@ -13,7 +13,7 @@ int *count_digits(dice_t dice)
 
 unsigned char full_straight(dice_t dice, callback_t cb, unsigned char default_value, char condition_value)
 {
-  int *counts = count_digits(dice);
+  unsigned char *counts = count_digits(dice);
   for (unsigned char i = 1; i < 7; i++)
     if (cb(i, counts))
       return (condition_value == -1) ? i : condition_value;
@@ -22,10 +22,10 @@ unsigned char full_straight(dice_t dice, callback_t cb, unsigned char default_va
 }
 
 // Callbacks
-unsigned char full_house_cb(unsigned char index, int *counts) { return counts[index] == 1 || counts[index] > 3; }
-unsigned char four_of_a_kind_cb(unsigned char index, int *counts) { return counts[index] >= 4; }
-unsigned char little_straight_cb(unsigned char index, int *counts) { return counts[index] != 1 && index != 6; }
-unsigned char big_straight_cb(unsigned char index, int *counts) { return counts[index] != 1 && index != 1; }
+unsigned char full_house_cb(unsigned char index, unsigned char *counts) { return counts[index] == 1 || counts[index] > 3; }
+unsigned char four_of_a_kind_cb(unsigned char index, unsigned char *counts) { return counts[index] >= 4; }
+unsigned char little_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 6; }
+unsigned char big_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 1; }
 
 // Category commands
 int ones(dice_t dice) { return count_digits(dice)[1]; }

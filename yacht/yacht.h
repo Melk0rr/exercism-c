@@ -22,18 +22,18 @@ typedef struct
   int faces[5];
 } dice_t;
 
-typedef unsigned char (*callback_t)(unsigned char, int *);
+typedef unsigned char (*callback_t)(unsigned char, unsigned char *);
 typedef int (*ctg_cmd_t)(dice_t);
 
 // Core functions
-int *count_digits(dice_t dice);
+unsigned char *count_digits(dice_t dice);
 unsigned char full_straight(dice_t dice, callback_t cb, unsigned char default_value, char condition_value);
 
 // Callbacks
-unsigned char full_house_cb(unsigned char index, int *counts);
-unsigned char four_of_a_kind_cb(unsigned char index, int *counts);
-unsigned char little_straight_cb(unsigned char index, int *counts);
-unsigned char big_straight_cb(unsigned char index, int *counts);
+unsigned char full_house_cb(unsigned char index, unsigned char *counts);
+unsigned char four_of_a_kind_cb(unsigned char index, unsigned char *counts);
+unsigned char little_straight_cb(unsigned char index, unsigned char *counts);
+unsigned char big_straight_cb(unsigned char index, unsigned char *counts);
 
 // Category commands
 int ones(dice_t dice);
