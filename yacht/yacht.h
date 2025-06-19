@@ -22,19 +22,26 @@ typedef struct
   int faces[5];
 } dice_t;
 
-struct ctg_cmd
-{
-  int (*func)(dice_t dice);
-};
+typedef unsigned char (*callback_t)(unsigned char, int *);
+typedef int (*ctg_cmd_t)(dice_t);
 
-int *count_digit(dice_t dice);
+int *count_digits(dice_t dice);
+unsigned char full_straight(dice_t dice, callback_t cb, unsigned char default_value, char condition_value);
 int ones(dice_t dice);
 int twos(dice_t dice);
 int threes(dice_t dice);
 int fours(dice_t dice);
 int fives(dice_t dice);
 int sixes(dice_t dice);
+int choice(dice_t dice);
+unsigned char full_house_cb(unsigned char index, int *counts);
 int full_house(dice_t dice);
+unsigned char four_of_a_kind_cb(unsigned char index, int *counts);
+int four_of_a_kind(dice_t dice);
+unsigned char little_straight_cb(unsigned char index, int *counts);
+int little_straight(dice_t dice);
+unsigned char big_straight_cb(unsigned char index, int *counts);
+int big_straight(dice_t dice);
 int yacht(dice_t dice);
 int score(dice_t dice, category_t category);
 
