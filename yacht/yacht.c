@@ -1,5 +1,7 @@
 #include "yacht.h"
 #include <stdlib.h>
+#include <stdbool.h>
+
 typedef bool (*callback_t)(unsigned char, unsigned char *);
 typedef int (*ctg_cmd_t)(dice_t);
 
@@ -27,10 +29,10 @@ unsigned char full_straight(dice_t dice, callback_t cb, unsigned char default_va
 }
 
 // Callbacks
-unsigned char full_house_cb(unsigned char index, unsigned char *counts) { return counts[index] == 1 || counts[index] > 3; }
-unsigned char four_of_a_kind_cb(unsigned char index, unsigned char *counts) { return counts[index] >= 4; }
-unsigned char little_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 6; }
-unsigned char big_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 1; }
+static bool full_house_cb(unsigned char index, unsigned char *counts) { return counts[index] == 1 || counts[index] > 3; }
+static bool four_of_a_kind_cb(unsigned char index, unsigned char *counts) { return counts[index] >= 4; }
+static bool little_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 5; }
+static bool big_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 0; }
 
 // Category commands
 int ones(dice_t dice) { return count_digits(dice)[1]; }
