@@ -1,9 +1,6 @@
 #include "isogram.h"
 
-int toLowerCase(int ch)
-{
-  return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
-}
+static int toLowerCase(int ch) { return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch; }
 
 bool is_isogram(const char phrase[])
 {
@@ -18,7 +15,7 @@ bool is_isogram(const char phrase[])
       return false;
 
     else
-       seen[letter] = true;
+      seen[letter] = true;
   }
   return true;
 }
