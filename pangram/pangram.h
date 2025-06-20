@@ -3,7 +3,6 @@
 
 #include <stdbool.h>
 
-int toLowerCase(char ch);
 bool is_pangram(const char *sentence);
 
 #endif
