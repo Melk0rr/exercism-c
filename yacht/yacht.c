@@ -8,46 +8,50 @@ typedef int (*ctg_cmd_t)(dice_t);
 // Core functions
 static unsigned char *count_digits(dice_t dice)
 {
-  unsigned char *counts = calloc(6, sizeof(int));
+  unsigned char *counts = calloc(7, sizeof(int));
   if (counts == NULL)
     abort();
 
   for (unsigned char i = 0; i < 5; i++)
-    counts[dice.faces[i] - 1]++;
+    counts[dice.faces[i]]++;
 
   return counts;
 }
 
-static int get_score_mult(dice_t dice, callback_t cb, unsigned char default_score_mult)
+static int find_face_index(dice_t dice, callback_t cb)
 {
   unsigned char *counts = count_digits(dice);
-  for (unsigned char i = 0; i < 6; i++)
+  int res = 0;
+  for (unsigned char i = 1; i < 7; i++)
     if (cb(i, counts))
-      return (default_score_mult == 0) ? i + 1 : 0;
+    {
+      res = i;
+      break;
+    }
 
   free(counts);
-  return default_score_mult;
+  return res;
 }
 
 // Callbacks
 static bool full_house_cb(unsigned char index, unsigned char *counts) { return counts[index] == 1 || counts[index] > 3; }
 static bool four_of_a_kind_cb(unsigned char index, unsigned char *counts) { return counts[index] >= 4; }
-static bool little_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 5; }
-static bool big_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 0; }
+static bool little_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 6; }
+static bool big_straight_cb(unsigned char index, unsigned char *counts) { return counts[index] != 1 && index != 1; }
 
 // Category commands
-static int ones(dice_t dice) { return count_digits(dice)[0]; }
-static int twos(dice_t dice) { return count_digits(dice)[1] * 2; }
-static int threes(dice_t dice) { return count_digits(dice)[2] * 3; }
-static int fours(dice_t dice) { return count_digits(dice)[3] * 4; }
-static int fives(dice_t dice) { return count_digits(dice)[4] * 5; }
-static int sixes(dice_t dice) { return count_digits(dice)[5] * 6; }
+static int ones(dice_t dice) { return count_digits(dice)[1]; }
+static int twos(dice_t dice) { return count_digits(dice)[2] * 2; }
+static int threes(dice_t dice) { return count_digits(dice)[3] * 3; }
+static int fours(dice_t dice) { return count_digits(dice)[4] * 4; }
+static int fives(dice_t dice) { return count_digits(dice)[5] * 5; }
+static int sixes(dice_t dice) { return count_digits(dice)[6] * 6; }
 static int choice(dice_t dice) { return (dice.faces[0] + dice.faces[1] + dice.faces[2] + dice.faces[3] + dice.faces[4]); }
-static int full_house(dice_t dice) { return choice(dice) * get_score_mult(dice, full_house_cb, 1); }
-static int four_of_a_kind(dice_t dice) { return 4 * get_score_mult(dice, four_of_a_kind_cb, 0); }
-static int little_straight(dice_t dice) { return 30 * get_score_mult(dice, little_straight_cb, 1); }
-static int big_straight(dice_t dice) { return 30 * get_score_mult(dice, big_straight_cb, 1); }
-static int yacht(dice_t dice) { return (choice(dice) / dice.faces[0] == dice.faces[0]) * 50; }
+static int full_house(dice_t dice) { return choice(dice) * (find_face_index(dice, full_house_cb) == 0); }
+static int four_of_a_kind(dice_t dice) { return 4 * find_face_index(dice, four_of_a_kind_cb); }
+static int little_straight(dice_t dice) { return 30 * (find_face_index(dice, little_straight_cb) == 0); }
+static int big_straight(dice_t dice) { return 30 * (find_face_index(dice, big_straight_cb) == 0); }
+static int yacht(dice_t dice) { return 50 * (choice(dice) / dice.faces[0] == dice.faces[0]); }
 
 static const ctg_cmd_t command_lookup[] = {
   [ONES] = ones                      , [TWOS] = twos                , [THREES] = threes        , [FOURS] = fours,
