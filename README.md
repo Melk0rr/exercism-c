@@ -24,7 +24,7 @@ My exercism.org C exercises
 | [binary](./binary) | [prime-factors](./prime-factors) |  |
 | [eliuds-eggs](./eliuds-eggs) | [nth-prime](./nth-prime) |  |
 | [two-fer](./two-fer) | [all-your-base](./all-your-base) |  |
-| [raindrops](./raindrops) |  |  |
+| [raindrops](./raindrops) | [yacht](./yacht)  |  |
 | [dnd-characters](./dnd-character) |  |  |
 | [perfect-numbers](./perfect-numbers) |  |  |
 | [high-scores](./high-scores) |  |  |
@@ -83,6 +83,7 @@ My exercism.org C exercises
 <details>
 <summary><b>Lookup table</b></summary>
 
+- [rna-transcription](./rna-transcription)
 - [yacht](./yacht)
 </details>
 
