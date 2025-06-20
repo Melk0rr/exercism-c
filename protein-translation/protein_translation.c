@@ -3,7 +3,7 @@
 
 #define UPPER_A 65
 
-const amino_acid_t amino_table[26][26][26] = {
+static const amino_acid_t amino_table[26][26][26] = {
     [0] = {[20] = {[6] = Methionine}},
     [20] = {[0] = {[0] = -1, [2] = Tyrosine, [6] = -1, [20] = Tyrosine},
             [2] = {[0] = Serine, [2] = Serine, [6] = Serine, [20] = Serine},
