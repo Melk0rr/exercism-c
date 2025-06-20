@@ -4,7 +4,7 @@
 
 #define MIN_PER_DAY (24 * 60)
 
-int str_to_int(char *str)
+static int str_to_int(char *str)
 {
   int number;
   sscanf(str, "%d", &number);

@@ -10,7 +10,6 @@ typedef struct clock_t
   char text[MAX_STR_LEN];
 } clock_t;
 
-int str_to_int(char *str);
 clock_t clock_create(int hour, int minute);
 clock_t clock_add(clock_t clock, int minute_add);
 clock_t clock_subtract(clock_t clock, int minute_subtract);
