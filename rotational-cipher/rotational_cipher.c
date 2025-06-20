@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char rotate_letter(char letter, int shift, int modulo)
+static char rotate_letter(char letter, int shift, int modulo)
 {
   return (char)(((((int)letter - modulo) + shift) % 26) + modulo);
 }
