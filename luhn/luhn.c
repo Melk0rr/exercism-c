@@ -2,8 +2,8 @@
 
 #include "luhn.h"
 
-bool is_valid_char(char cc) { return (cc == 32) || (cc >= 48 && cc <= 57); }
-int double_digit(int digit) { return (digit * 2 > 9) ? digit * 2 - 9 : digit * 2; }
+static bool is_valid_char(char cc) { return (cc == 32) || (cc >= 48 && cc <= 57); }
+static int double_digit(int digit) { return (digit * 2 > 9) ? digit * 2 - 9 : digit * 2; }
 
 bool luhn(const char *num)
 {
