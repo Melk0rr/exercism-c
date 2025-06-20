@@ -1,8 +1,15 @@
-#include <stdlib.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "rna_transcription.h"
+
+static int transcription_table[] = {
+    ['G'] = 'C',
+    ['C'] = 'G',
+    ['T'] = 'A',
+    ['A'] = 'U',
+};
 
 char *to_rna(const char *dna)
 {
@@ -11,30 +18,10 @@ char *to_rna(const char *dna)
 
   if (!rna)
     return NULL;
-  
+
   for (unsigned int i = 0; dna[i]; i++)
-  {
-    switch (dna[i]) {
-      case 'G':
-        rna[i] = 'C';
-        break;
-
-      case 'C':
-        rna[i] = 'G';
-        break;
-
-      case 'T':
-        rna[i] = 'A';
-        break;
-
-      case 'A':
-        rna[i] = 'U';
-        break;
-
-      default:
-        rna[i] = dna[i];
-    }
-  }
+    rna[i] =
+        (dna[i] == 'G' || dna[i] == 'C' || dna[i] == 'T' || dna[i] == 'A') ? transcription_table[(int)dna[i]] : dna[i];
 
   rna[len] = '\0';
   return rna;
