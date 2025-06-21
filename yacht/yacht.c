@@ -51,7 +51,7 @@ static int full_house(dice_t dice) { return choice(dice) * (find_face_index(dice
 static int four_of_a_kind(dice_t dice) { return 4 * find_face_index(dice, four_of_a_kind_cb); }
 static int little_straight(dice_t dice) { return 30 * (find_face_index(dice, little_straight_cb) == 0); }
 static int big_straight(dice_t dice) { return 30 * (find_face_index(dice, big_straight_cb) == 0); }
-static int yacht(dice_t dice) { return 50 * (choice(dice) / dice.faces[0] == dice.faces[0]); }
+static int yacht(dice_t dice) { return 50 * (dice.faces[0] == dice.faces[1] && dice.faces[0] == dice.faces[2] && dice.faces[0] == dice.faces[3] && dice.faces[0] == dice.faces[4]); }
 
 static const ctg_cmd_t command_lookup[] = {
   [ONES] = ones                      , [TWOS] = twos                , [THREES] = threes        , [FOURS] = fours,
