@@ -8,7 +8,7 @@ typedef int (*ctg_cmd_t)(dice_t);
 // Core functions
 static unsigned char *count_digits(dice_t dice)
 {
-  unsigned char *counts = calloc(7, sizeof(int));
+  unsigned char *counts = calloc(7, sizeof(*counts));
   if (counts == NULL)
     abort();
 
