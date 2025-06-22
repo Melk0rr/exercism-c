@@ -85,6 +85,7 @@ My exercism.org C exercises
 
 - [rna-transcription](./rna-transcription)
 - [yacht](./yacht)
+- [scrabble-score](./scrabble-score)
 </details>
 
 <details>
