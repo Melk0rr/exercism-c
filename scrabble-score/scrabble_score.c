@@ -7,7 +7,7 @@ static int letter_values[] = {
     ['s'] = 1, ['t'] = 1, ['u'] = 1, ['v'] = 4, ['w'] = 4, ['x'] = 8, ['y'] = 4, ['z'] = 10,
 };
 
-static int to_lower_case(int ch) { return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch; }
+static char to_lower_case(char ch) { return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch; }
 unsigned int score(const char *word)
 {
   unsigned int score = 0;
