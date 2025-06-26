@@ -1,6 +1,5 @@
 #include "sublist.h"
 #include <stdbool.h>
-#include <stdio.h>
 
 static bool is_sublist(int *list_to_compare, int *base_list, size_t list_to_compare_element_count,
                        size_t base_list_element_count)
