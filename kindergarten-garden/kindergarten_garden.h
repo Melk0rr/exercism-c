@@ -7,4 +7,6 @@ typedef struct {
    plant_t plants[4];
 } plants_t;
 
+plants_t plants(const char *diagram, const char *student);
+
 #endif
