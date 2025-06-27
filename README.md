@@ -25,9 +25,9 @@ My exercism.org C exercises
 | [eliuds-eggs](./eliuds-eggs) | [nth-prime](./nth-prime) |  |
 | [two-fer](./two-fer) | [all-your-base](./all-your-base) |  |
 | [raindrops](./raindrops) | [yacht](./yacht)  |  |
-| [dnd-characters](./dnd-character) |  |  |
-| [perfect-numbers](./perfect-numbers) |  |  |
-| [high-scores](./high-scores) |  |  |
+| [dnd-characters](./dnd-character) | [scrabble-score](./scrabble-score) |  |
+| [perfect-numbers](./perfect-numbers) | [sublist](./sublist)  |  |
+| [high-scores](./high-scores) | [kindergarten-garden](./kindergarten-garden)  |  |
 | [pangram](./pangram) |  |  |
 | [resistor-color-trio](./resistor-color-trio) |  |  |
 | [armstrong-number](./armstrong-numbers) |  |  |
@@ -78,6 +78,12 @@ My exercism.org C exercises
 - [two-fer](./twho-fer)
 - [beer-song](./beer-song)
 - [raindrops](./raindrops)
+</details>
+
+<details>
+<summary>Substring</summary>
+
+- [kindergarten-garden](./kindergarten-garden) 
 </details>
 
 <details>
