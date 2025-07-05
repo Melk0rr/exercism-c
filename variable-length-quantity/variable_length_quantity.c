@@ -23,13 +23,13 @@ int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
       n /= 128;
     }
 
-    if (digit_i > 1)
-      digits[digit_i - 1] |= (1u << 7);
-
     printf("digit number: %hhu\n", digit_i);
 
     for (int j = digit_i - 1; j >= 0; j--) {
       printf("digit: %d; ", digits[j]);
+      if (j >= 1)
+        digits[j] |= (1u << 7);
+
       output[size++] = digits[j];
     }
   }
