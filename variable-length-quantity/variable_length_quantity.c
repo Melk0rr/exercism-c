@@ -19,7 +19,7 @@ int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
     uint32_t n = integers[i];
     while(n > 0)
     {
-      digits[digit_i++] = integers[i] % 128;
+      digits[digit_i++] = n % 128;
       n /= 128;
     }
 
