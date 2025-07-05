@@ -6,7 +6,7 @@ int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
   // write to `output`, return final output's length
   // `output` buffer should be enough to hold the full result
   int size = 0;
-  for (size_t i = 0; i < integers_len; i++) {
+  for (uint8_t i = 0; i < integers_len; i++) {
     uint8_t digits[32];
 
     if (integers_len == 1 && integers[0] == 0)
@@ -15,7 +15,7 @@ int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
       return 1;
     }
 
-    size_t digit_i = 0;
+    uint8_t digit_i = 0;
     uint32_t n = integers[i];
     while(n > 0)
     {
@@ -23,8 +23,13 @@ int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
       n /= 128;
     }
 
+    if (digit_i > 1)
+      digits[digit_i - 1] |= (1u << 7);
+
+    printf("digit number: %hhu\n", digit_i);
+
     for (int j = digit_i - 1; j >= 0; j--) {
-      printf("digit: %d", digits[j]);
+      printf("digit: %d; ", digits[j]);
       output[size++] = digits[j];
     }
   }
