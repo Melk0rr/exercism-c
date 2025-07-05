@@ -1,8 +1,8 @@
 #ifndef VARIABLE_LENGTH_QUANTITY_H
 #define VARIABLE_LENGTH_QUANTITY_H
 
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
 
 /// Encode an array of integers into Variable Length Quantity.
 ///
