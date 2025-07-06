@@ -48,7 +48,20 @@ int decode(const uint8_t *bytes, size_t buffer_len, uint32_t *output)
   // write to `output`, return final output's length
   // return -1 if error
   // `output` buffer should be enough to hold the full result
-  output[0] = (uint8_t)0;
-  printf("(%d), %zu", bytes[0], buffer_len);
-  return 1;
+  if ((buffer_len > 0) && (bytes[buffer_len - 1] & 0x80))
+    return -1;
+
+  size_t size = 0;
+  uint32_t integer = 0;
+  for (size_t i = 0; i < buffer_len; i++)
+  {
+    integer = (integer << 7) | (bytes[i] & 0x7F);
+    if ((bytes[i] & 0x80) == 0)
+    {
+      output[size++] = integer;
+      integer = 0;
+    }
+  }
+
+  return size;
 }
