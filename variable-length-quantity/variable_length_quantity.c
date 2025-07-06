@@ -1,42 +1,29 @@
 #include "variable_length_quantity.h"
-#include <stdio.h>
 
 int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
 {
   // write to `output`, return final output's length
   // `output` buffer should be enough to hold the full result
-
-  if (integers_len == 1 && integers[0] == 0)
+  size_t size = 0;
+  for (size_t i = 0; i < integers_len; i++)
   {
-    output[0] = (uint8_t)0;
-    return 1;
-  }
-
-  int size = 0;
-  for (uint8_t i = 0; i < integers_len; i++) {
-    uint8_t digits[32];
-
-    uint8_t digit_i = 0;
+    uint8_t bytes[5];
+    uint8_t tmp_len = 0;
     uint32_t n = integers[i];
 
-    if (n == 0)
-      digits[digit_i++] = 0;
+    do
+    {
+      bytes[tmp_len++] = n & 0x7F;
+      n >>= 7;
+    } while (n);
 
-    else
-      while(n > 0)
-      {
-        digits[digit_i++] = n % 128;
-        n /= 128;
-      }
+    for (int j = tmp_len - 1; j >= 0; j--)
+    {
+      uint8_t byte = bytes[j];
+      if (j != 0)
+        byte |= (1u << 7);
 
-    printf("digit number: %hhu\n", digit_i);
-
-    for (int j = digit_i - 1; j >= 0; j--) {
-      printf("digit: %d; ", digits[j]);
-      if (j >= 1)
-        digits[j] |= (1u << 7);
-
-      output[size++] = digits[j];
+      output[size++] = byte;
     }
   }
 
