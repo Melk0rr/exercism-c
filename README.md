@@ -28,7 +28,7 @@ My exercism.org C exercises
 | [dnd-characters](./dnd-character) | [scrabble-score](./scrabble-score) |  |
 | [perfect-numbers](./perfect-numbers) | [sublist](./sublist)  |  |
 | [high-scores](./high-scores) | [kindergarten-garden](./kindergarten-garden)  |  |
-| [pangram](./pangram) |  |  |
+| [pangram](./pangram) | [variable-length-quantity](./variable-length-quantity) |  |
 | [resistor-color-trio](./resistor-color-trio) |  |  |
 | [armstrong-number](./armstrong-numbers) |  |  |
 | [isogram](./isogram) |  |  |
@@ -98,6 +98,12 @@ My exercism.org C exercises
 <summary><b>Function pointer</b></summary>
 
 - [yacht](./yacht)
+</details>
+
+<details>
+<summary>Variable Length Quantity (VQL)</summary>
+
+- [variable-length-quantity](./variable-length-quantity)
 </details>
 
 ### Subjects
