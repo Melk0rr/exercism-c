@@ -2,8 +2,6 @@
 
 int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
 {
-  // write to `output`, return final output's length
-  // `output` buffer should be enough to hold the full result
   size_t size = 0;
   for (size_t i = 0; i < integers_len; i++)
   {
@@ -19,11 +17,10 @@ int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
 
     for (int j = tmp_len - 1; j >= 0; j--)
     {
-      uint8_t byte = bytes[j];
       if (j != 0)
-        byte |= (1u << 7);
+        bytes[j] |= (1u << 7);
 
-      output[size++] = byte;
+      output[size++] = bytes[j];
     }
   }
 
@@ -32,9 +29,6 @@ int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
 
 int decode(const uint8_t *bytes, size_t buffer_len, uint32_t *output)
 {
-  // write to `output`, return final output's length
-  // return -1 if error
-  // `output` buffer should be enough to hold the full result
   if ((buffer_len > 0) && (bytes[buffer_len - 1] & 0x80))
     return -1;
 
