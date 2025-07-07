@@ -4,7 +4,7 @@
 
 #include "rna_transcription.h"
 
-static int transcription_table[] = {
+static const int transcription_table[] = {
     ['G'] = 'C',
     ['C'] = 'G',
     ['T'] = 'A',
@@ -13,7 +13,7 @@ static int transcription_table[] = {
 
 char *to_rna(const char *dna)
 {
-  size_t len = strlen(dna);
+  const size_t len = strlen(dna);
   char *rna = malloc((len + 1) * sizeof(*rna));
 
   if (!rna)
