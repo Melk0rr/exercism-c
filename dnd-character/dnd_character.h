@@ -12,7 +12,7 @@ typedef struct {
 } dnd_character_t;
 
 int ability(void);
-int modifier(int score);
+int modifier(int const score);
 dnd_character_t make_dnd_character(void);
 
 #endif
