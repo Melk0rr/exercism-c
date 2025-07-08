@@ -3,12 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *count(const char *dna_strand)
+char *count(char const * const dna_strand)
 {
   int tracker[] = {['A'] = 0, ['C'] = 0, ['G'] = 0, ['T'] = 0};
-  char *count_str = malloc(30);
+  char * const count_str = malloc(30);
 
-  for (unsigned int i = 0; i < strlen(dna_strand); i++)
+  for (size_t i = 0; i < strlen(dna_strand); i++)
   {
     if (dna_strand[i] != 'A' && dna_strand[i] != 'C' && dna_strand[i] != 'G' && dna_strand[i] != 'T')
     {
