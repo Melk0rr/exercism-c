@@ -2,17 +2,16 @@
 
 #include "luhn.h"
 
-static bool is_valid_char(char cc) { return (cc == 32) || (cc >= 48 && cc <= 57); }
-static int double_digit(int digit) { return (digit * 2 > 9) ? digit * 2 - 9 : digit * 2; }
+static bool is_valid_char(char const cc) { return (cc == 32) || (cc >= 48 && cc <= 57); }
+static int double_digit(int const digit) { return (digit * 2 > 9) ? digit * 2 - 9 : digit * 2; }
 
-bool luhn(const char *num)
+bool luhn(char const * const num)
 {
   if (strlen(num) <= 1)
     return false;
 
   char doubled_num[strlen(num)];
-  unsigned int sum = 0;
-  unsigned int digit_counter = 0;
+  unsigned int sum = 0, digit_counter = 0;
   for (int i = strlen(num) - 1; i >= 0; i--)
   {
     if (!is_valid_char(num[i]))

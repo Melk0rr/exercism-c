@@ -3,6 +3,6 @@
 
 #include <stdbool.h>
 
-bool luhn(const char *num);
+bool luhn(char const * const num);
 
 #endif
