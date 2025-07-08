@@ -9,6 +9,6 @@ typedef struct coordinate_t
   float y;
 } coordinate_t;
 
-uint8_t score( coordinate_t pos);
+uint8_t score(coordinate_t const pos);
 
 #endif
