@@ -9,7 +9,7 @@ static int const letter_values[] = {
     ['y'] = 4, ['z'] = 10,
 };
 
-static char to_lower_case(char const ch)
+static char const to_lower_case(char const ch)
 {
   return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
 }
