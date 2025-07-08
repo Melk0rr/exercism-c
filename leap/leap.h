@@ -3,6 +3,6 @@
 
 #include <stdbool.h>
 
-bool leap_year(int year);
+bool leap_year(int const year);
 
 #endif
