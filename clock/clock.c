@@ -4,7 +4,7 @@
 
 #define MIN_PER_DAY (24 * 60)
 
-static int str_to_int(char *str)
+static int str_to_int(char * str)
 {
   int number;
   sscanf(str, "%d", &number);
@@ -12,15 +12,29 @@ static int str_to_int(char *str)
   return number;
 }
 
-clock_t clock_create(int hour, int minute)
+clock_t clock_create(int const hour, int const minute)
 {
-  int total_minutes = (((hour % 24) * 60 + minute) % MIN_PER_DAY + MIN_PER_DAY) % MIN_PER_DAY;
+  int const total_minutes =
+      (((hour % 24) * 60 + minute) % MIN_PER_DAY + MIN_PER_DAY) % MIN_PER_DAY;
   clock_t new_clock;
   sprintf(new_clock.text, "%02d:%02d", total_minutes / 60, total_minutes % 60);
 
   return new_clock;
 }
 
-clock_t clock_add(clock_t clock, int minute_add) { return clock_create(str_to_int(clock.text), str_to_int(clock.text + 3) + minute_add); }
-clock_t clock_subtract(clock_t clock, int minute_add) { return clock_create(str_to_int(clock.text), str_to_int(clock.text + 3) - minute_add); }
-bool clock_is_equal(clock_t a, clock_t b) { return !strcmp(a.text, b.text); }
+clock_t clock_add(clock_t clock, const int minute_add)
+{
+  return clock_create(str_to_int(clock.text),
+                      str_to_int(clock.text + 3) + minute_add);
+}
+
+clock_t clock_subtract(clock_t clock, const int minute_add)
+{
+  return clock_create(str_to_int(clock.text),
+                      str_to_int(clock.text + 3) - minute_add);
+}
+
+bool clock_is_equal(clock_t const a, const clock_t b)
+{
+  return !strcmp(a.text, b.text);
+}
