@@ -3,6 +3,6 @@
 
 #define INVALID -1
 
-int convert(const char *input);
+int convert(char const * const input);
 
 #endif
