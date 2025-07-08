@@ -1,7 +1,8 @@
 # INFO: Clang format customization
 
-ColumnLimit: 120
+ColumnLimit: 79
 BreakBeforeBraces: Custom
+PointerAlignment: Middle
 BraceWrapping:
   AfterClass:              true
   AfterControlStatement:   true
