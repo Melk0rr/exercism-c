@@ -4,8 +4,8 @@
 
 int convert(char const * const input)
 {
-  int count = 0;
-  for (int i = 0; input[i]; i++)
+  size_t count = 0;
+  for (size_t i = 0; input[i]; i++)
   {
     uint8_t const bit = input[i] - '0';
     if (bit > 1)
