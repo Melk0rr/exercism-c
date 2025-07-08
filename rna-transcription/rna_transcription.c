@@ -4,17 +4,17 @@
 
 #include "rna_transcription.h"
 
-static const int transcription_table[] = {
+static char const transcription_table[] = {
     ['G'] = 'C',
     ['C'] = 'G',
     ['T'] = 'A',
     ['A'] = 'U',
 };
 
-char *to_rna(const char *dna)
+char *to_rna(char const * const dna)
 {
-  const size_t len = strlen(dna);
-  char *rna = malloc((len + 1) * sizeof(*rna));
+  size_t const len = strlen(dna);
+  char * const rna = malloc((len + 1) * sizeof(*rna));
 
   if (!rna)
     return NULL;
