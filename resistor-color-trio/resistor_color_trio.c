@@ -1,7 +1,7 @@
-#include <math.h>
 #include "resistor_color_trio.h"
+#include <math.h>
 
-resistor_value_t color_code(resistor_band_t *col)
+resistor_value_t color_code(resistor_band_t const * const col)
 {
   resistor_value_t resistor;
   resistor.value = (col[0] * 10 + col[1]) * pow(10, col[2]);

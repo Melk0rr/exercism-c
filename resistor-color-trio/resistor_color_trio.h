@@ -1,8 +1,8 @@
 #ifndef RESISTOR_COLOR_TRIO_H
 #define RESISTOR_COLOR_TRIO_H
 
-
-typedef enum {
+typedef enum
+{
   BLACK,
   BROWN,
   RED,
@@ -15,7 +15,8 @@ typedef enum {
   WHITE,
 } resistor_band_t;
 
-typedef enum {
+typedef enum
+{
   OHMS,
   KILOOHMS,
   MEGAOHMS,
@@ -28,6 +29,6 @@ typedef struct resistor_value_t
   resistor_unit_t unit;
 } resistor_value_t;
 
-resistor_value_t color_code(resistor_band_t *col);
+resistor_value_t color_code(resistor_band_t const * const col);
 
 #endif
