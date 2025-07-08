@@ -1,4 +1,5 @@
 #include "robot_simulator.h"
+#include <stddef.h>
 
 static robot_position_t const movements[] = {
     [DIRECTION_NORTH] = {0, 1},
@@ -7,7 +8,7 @@ static robot_position_t const movements[] = {
     [DIRECTION_WEST] = {-1, 0},
 };
 
-robot_status_t robot_create(robot_direction_t direction, int x, int y)
+robot_status_t robot_create(robot_direction_t const direction, int const x, int const y)
 {
   robot_status_t new_robot = {direction, {x, y}};
   return new_robot;
@@ -15,7 +16,7 @@ robot_status_t robot_create(robot_direction_t direction, int x, int y)
 
 void robot_move(robot_status_t * const robot, char const * const commands)
 {
-  for (unsigned int i = 0; commands[i] != '\0'; i++)
+  for (size_t i = 0; commands[i] != '\0'; i++)
   {
     if (commands[i] != 'A')
       robot->direction = commands[i] == 'R' ? (robot->direction + 1) % 4

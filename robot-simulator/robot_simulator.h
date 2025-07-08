@@ -23,7 +23,7 @@ typedef struct
   robot_position_t position;
 } robot_status_t;
 
-robot_status_t robot_create(robot_direction_t direction, int x, int y);
+robot_status_t robot_create(robot_direction_t const direction, int const x, int const y);
 void robot_move(robot_status_t * const robot, char const * const commands);
 
 #endif
