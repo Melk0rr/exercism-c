@@ -3,7 +3,7 @@
 
 #define UPPER_A 65
 
-static const amino_acid_t amino_table[26][26][26] = {
+static amino_acid_t const amino_table[26][26][26] = {
     [0] = {[20] = {[6] = Methionine}},
     [20] = {
         [0] = {[0] = -1, [2] = Tyrosine, [6] = -1, [20] = Tyrosine},
@@ -20,8 +20,9 @@ protein_t protein(char const * const rna)
   for (size_t i = 0; i < strlen(rna); i += 3)
   {
     char const * const codon = rna + i;
-    amino_acid_t const amino = amino_table[codon[0] - UPPER_A][codon[1] - UPPER_A]
-                                    [codon[2] - UPPER_A];
+    amino_acid_t const amino =
+        amino_table[codon[0] - UPPER_A][codon[1] - UPPER_A]
+                   [codon[2] - UPPER_A];
 
     if (!amino)
       res.valid = false;
