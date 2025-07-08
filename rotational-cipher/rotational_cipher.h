@@ -3,6 +3,6 @@
 
 #include <stdbool.h>
 
-char *rotate(const char *text, int shift_key);
+char *rotate(char const * const text, int const shift_key);
 
 #endif
