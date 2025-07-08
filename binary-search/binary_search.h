@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 
-const int *binary_search(int value, const int *arr, size_t length);
+int const * binary_search(int const value, int const * const arr,
+                          size_t const length);
 
 #endif
