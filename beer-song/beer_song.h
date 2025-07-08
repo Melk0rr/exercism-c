@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
-void recite(uint8_t start_bottles, uint8_t take_down, char **song);
+void recite(uint8_t const start_bottles, uint8_t const take_down,
+            char * const * song);
 
 #endif
