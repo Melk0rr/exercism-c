@@ -1,11 +1,10 @@
 #include "perfect_numbers.h"
 
-kind classify_number(int num) {
+kind classify_number(int const num) {
   if (num < 1)
     return ERROR;
 
   int sum = 0;
-
   for (int i = 1; i <= num / 2; i++)
     if (num % i == 0)
       sum += i;
