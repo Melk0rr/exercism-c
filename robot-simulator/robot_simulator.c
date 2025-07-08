@@ -1,6 +1,6 @@
 #include "robot_simulator.h"
 
-static robot_position_t movements[] = {
+static robot_position_t const movements[] = {
     [DIRECTION_NORTH] = {0, 1},
     [DIRECTION_SOUTH] = {0, -1},
     [DIRECTION_EAST] = {1, 0},
@@ -13,7 +13,7 @@ robot_status_t robot_create(robot_direction_t direction, int x, int y)
   return new_robot;
 }
 
-void robot_move(robot_status_t *robot, const char *commands)
+void robot_move(robot_status_t * const robot, char const * const commands)
 {
   for (unsigned int i = 0; commands[i] != '\0'; i++)
   {
