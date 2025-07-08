@@ -1,6 +1,7 @@
 #include "variable_length_quantity.h"
 
-int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
+int encode(uint32_t const * const integers, size_t const integers_len,
+           uint8_t * const output)
 {
   size_t size = 0;
   for (size_t i = 0; i < integers_len; i++)
@@ -27,7 +28,8 @@ int encode(const uint32_t *integers, size_t integers_len, uint8_t *output)
   return size;
 }
 
-int decode(const uint8_t *bytes, size_t buffer_len, uint32_t *output)
+int decode(uint8_t const * const bytes, size_t const buffer_len,
+           uint32_t * const output)
 {
   if ((buffer_len > 0) && (bytes[buffer_len - 1] & 0x80))
     return -1;
