@@ -14,7 +14,7 @@ static const amino_acid_t amino_table[26][26][26] = {
                 [6] = Leucine,
                 [20] = Phenylalanine}}};
 
-protein_t protein(const char * const rna)
+protein_t protein(char const * const rna)
 {
   protein_t res = {.valid = true, .count = 0};
   for (size_t i = 0; i < strlen(rna); i += 3)
