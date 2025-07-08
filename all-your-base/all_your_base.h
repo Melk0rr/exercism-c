@@ -6,6 +6,7 @@
 
 #define DIGITS_ARRAY_SIZE 64
 
-size_t rebase(int8_t input_digits[], int16_t input_base, int16_t output_base, size_t input_length);
+size_t rebase(int8_t input_digits[], int16_t const input_base,
+              int16_t const output_base, size_t const input_length);
 
 #endif
