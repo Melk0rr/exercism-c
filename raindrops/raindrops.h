@@ -1,6 +1,6 @@
 #ifndef RAINDROPS_H
 #define RAINDROPS_H
 
-void convert(char result[], int drops);
+void convert(char result[], int const drops);
 
 #endif
