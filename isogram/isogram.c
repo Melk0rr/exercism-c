@@ -1,21 +1,25 @@
 #include "isogram.h"
+#include <stddef.h>
 
-static char to_lower_case(char ch) { return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch; }
+static char to_lower_case(char const ch)
+{
+  return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
+}
 
-bool is_isogram(const char phrase[])
+bool is_isogram(char const phrase[])
 {
   if (!phrase)
     return false;
 
   bool seen[256] = {false};
-  for (int i = 0; phrase[i] != '\0'; i++)
+  for (size_t i = 0; phrase[i] != '\0'; i++)
   {
-    int letter = to_lower_case(phrase[i]);
-    if (seen[letter] == true && (letter != 32 && letter != 45))
+    char const letter = to_lower_case(phrase[i]);
+    if (seen[(int)letter] == true && (letter != 32 && letter != 45))
       return false;
 
     else
-      seen[letter] = true;
+      seen[(int)letter] = true;
   }
   return true;
 }
