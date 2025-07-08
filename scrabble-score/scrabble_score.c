@@ -14,7 +14,7 @@ static char to_lower_case(char const ch)
   return (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
 }
 
-unsigned int score(const char * const word)
+unsigned int score(char const * const word)
 {
   size_t score = 0;
   for (size_t i = 0; i < strlen(word); i++)
