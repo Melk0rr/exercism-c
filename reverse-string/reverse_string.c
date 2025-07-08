@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *reverse(char const * const value)
+char * reverse(char const * const value)
 {
   size_t const value_len = strlen(value);
   char * const reversed = malloc((value_len + 1) * sizeof(char));
