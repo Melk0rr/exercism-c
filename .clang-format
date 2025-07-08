@@ -3,6 +3,7 @@
 ColumnLimit: 79
 BreakBeforeBraces: Custom
 PointerAlignment: Middle
+QualifierAlignment: Right
 BraceWrapping:
   AfterClass:              true
   AfterControlStatement:   true
