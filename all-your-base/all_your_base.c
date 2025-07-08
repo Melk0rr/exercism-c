@@ -14,19 +14,13 @@ size_t rebase(int8_t input_digits[], int16_t input_base, int16_t output_base, si
     value = value * input_base + input_digits[i];
   }
 
-  if (value == 0)
-  {
-    input_digits[0] = 0;
-    return 1;
-  }
-
   int8_t temp[DIGITS_ARRAY_SIZE];
   size_t output_len = 0;
-  while (value > 0)
+  do
   {
     temp[output_len++] = value % output_base;
     value /= output_base;
-  }
+  } while (value > 0);
 
   for (size_t i = 0; i < output_len; i++)
     input_digits[i] = temp[output_len - 1 - i];
