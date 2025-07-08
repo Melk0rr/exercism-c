@@ -1,6 +1,6 @@
 #ifndef SQUARE_ROOT_H
 #define SQUARE_ROOT_H
 
-unsigned int square_root(unsigned int num);
+unsigned int square_root(unsigned int const num);
 
 #endif
