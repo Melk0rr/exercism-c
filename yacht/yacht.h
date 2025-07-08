@@ -22,6 +22,6 @@ typedef struct
   int faces[5];
 } dice_t;
 
-int score(dice_t dice, category_t category);
+int score(dice_t const dice, category_t const category);
 
 #endif
