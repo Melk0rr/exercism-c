@@ -67,12 +67,6 @@ My exercism.org C exercises
 </details>
 
 <details>
-<summary><b>Bit flags</b></summary>
-
-- [allergies](./allergies)
-</details>
-
-<details>
 <summary><b>String format</b></summary>
 
 - [two-fer](./twho-fer)
@@ -104,6 +98,12 @@ My exercism.org C exercises
 <summary>Variable Length Quantity (VQL)</summary>
 
 - [variable-length-quantity](./variable-length-quantity)
+</details>
+
+<details>
+<summary>Designated Initializers</summary>                      
+
+- [complex-numbers](./complex-numbers) 
 </details>
 
 ### Subjects
