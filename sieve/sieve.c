@@ -1,4 +1,5 @@
 #include "sieve.h"
+#include <stdbool.h>
 
 uint32_t sieve(uint32_t const limit, uint32_t * const primes,
                size_t const max_primes)
@@ -13,12 +14,12 @@ uint32_t sieve(uint32_t const limit, uint32_t * const primes,
   size_t count = 1;
   for (size_t i = 3; i <= limit && count < max_primes; i += 2)
   {
-    unsigned char flag = 0;
+    bool flag = false;
     for (size_t j = 3; j * j <= i; j += 2)
     {
       if (i % j == 0)
       {
-        flag = 1;
+        flag = true;
         break;
       }
     }
