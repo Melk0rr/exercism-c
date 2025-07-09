@@ -19,7 +19,7 @@ char * to_rna(char const * const dna)
   if (!rna)
     return NULL;
 
-  for (unsigned int i = 0; dna[i]; i++)
+  for (size_t i = 0; dna[i]; i++)
     rna[i] = (dna[i] == 'G' || dna[i] == 'C' || dna[i] == 'T' || dna[i] == 'A')
                  ? transcription_table[(int)dna[i]]
                  : dna[i];
