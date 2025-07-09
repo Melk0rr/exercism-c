@@ -2,26 +2,26 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-typedef bool(* const callback_t)(unsigned char const, unsigned char const * const);
-typedef int (*ctg_cmd_t)(dice_t const);
+typedef bool(* const Callback)(unsigned char const, unsigned char const * const);
+typedef int (*CategoryCommand)(dice_t const);
 typedef struct
 {
   unsigned char counts[7];
-} face_counts_t;
+} FaceCounts;
 
 // Core functions
-static face_counts_t count_digits(dice_t const dice)
+static FaceCounts count_digits(dice_t const dice)
 {
-  face_counts_t fc = {0};
+  FaceCounts fc = {0};
   for (unsigned char i = 0; i < 5; i++)
     fc.counts[dice.faces[i]]++;
 
   return fc;
 }
 
-static size_t find_face_index(dice_t const dice, callback_t const cb)
+static size_t find_face_index(dice_t const dice, Callback const cb)
 {
-  face_counts_t fc = count_digits(dice);
+  FaceCounts fc = count_digits(dice);
   size_t res = 0;
   for (size_t i = 1; i < 7; i++)
     if (cb(i, fc.counts))
@@ -58,7 +58,7 @@ static int yacht(dice_t const dice)
           dice.faces[0] == dice.faces[3] && dice.faces[0] == dice.faces[4]);
 }
 
-static ctg_cmd_t const command_lookup[] = {
+static CategoryCommand const command_lookup[] = {
   [ONES] = ones, [TWOS] = twos, [THREES] = threes, [FOURS] = fours,
   [FIVES] = fives, [SIXES] = sixes, [FULL_HOUSE] = full_house, [FOUR_OF_A_KIND] = four_of_a_kind,
   [LITTLE_STRAIGHT] = little_straight, [BIG_STRAIGHT] = big_straight, [CHOICE] = choice, [YACHT] = yacht};
