@@ -4,7 +4,9 @@
 uint32_t sieve(uint32_t const limit, uint32_t * const primes,
                size_t const max_primes)
 {
-  if (limit < 2) return 0;
+  if (limit < 2)
+    return 0;
+
   if (limit == 2)
   {
     primes[0] = 2;
