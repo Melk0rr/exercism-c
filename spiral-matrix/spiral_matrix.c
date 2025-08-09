@@ -24,7 +24,6 @@ static spiral_matrix_t * init_matrix(size_t const matrix_size)
 
   new_spiral->size = matrix_size;
 
-
   if (matrix_size != 0)
   {
     new_spiral->matrix = xmalloc(matrix_size * sizeof(*new_spiral->matrix),
@@ -48,21 +47,9 @@ spiral_matrix_t * spiral_matrix_create(int const matrix_size)
   {
     new_spiral->matrix[y][x] = i + 1;
 
-    if (
-        // right boundary
-        (x + dx >= matrix_size) ||
-
-        // bottom boundary
-        (y - dy >= matrix_size) ||
-
-        // left boundary
-        (x + dx < 0) ||
-
-        // top boundary
-        (y - dy < 0) ||
-
-        // next index is already set
-        (new_spiral->matrix[y - dy][x + dx]))
+    int nx = x + dx, ny = y - dy;
+    if ((nx >= matrix_size) || (ny >= matrix_size) || (nx < 0) || (ny < 0) ||
+        (new_spiral->matrix[ny][nx]))
     {
       int8_t temp_dx = dx;
       dx = dy;
