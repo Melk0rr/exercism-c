@@ -1,16 +1,15 @@
 #include "spiral_matrix.h"
-#include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-static void * xmalloc(size_t const size, char const * const err)
+static void * xcalloc(size_t const nmemb, size_t const size)
 {
-  void * p = malloc(size);
+  void *p = calloc(nmemb, size);
 
   if (!p)
   {
-    fprintf(stderr, "%s\n", err);
+    fprintf(stderr, "Memory allocation failed");
     exit(EXIT_FAILURE);
   }
 
@@ -19,20 +18,16 @@ static void * xmalloc(size_t const size, char const * const err)
 
 static spiral_matrix_t * init_matrix(size_t const matrix_size)
 {
-  spiral_matrix_t * const new_spiral = xmalloc(
-      sizeof(*new_spiral), "Memory allocation failed for new spiral matrix");
-
+  spiral_matrix_t * const new_spiral = xcalloc(1, sizeof(*new_spiral));
   new_spiral->size = matrix_size;
 
-  if (matrix_size != 0)
-  {
-    new_spiral->matrix = xmalloc(matrix_size * sizeof(*new_spiral->matrix),
-                                 "Memory allocation failed for spiral matrix");
+  if (matrix_size == 0)
+    return new_spiral;
 
-    for (size_t i = 0; i < matrix_size; i++)
-      new_spiral->matrix[i] =
-          calloc(matrix_size, sizeof(*new_spiral->matrix[i]));
-  }
+  new_spiral->matrix = xcalloc(matrix_size, sizeof(*new_spiral->matrix));
+  for (size_t i = 0; i < matrix_size; i++)
+    new_spiral->matrix[i] =
+        xcalloc(matrix_size, sizeof(*new_spiral->matrix[i]));
 
   return new_spiral;
 }
