@@ -24,7 +24,8 @@ static spiral_matrix_t * init_matrix(size_t const matrix_size)
 
   new_spiral->size = matrix_size;
 
-  if (matrix_size > 0)
+
+  if (matrix_size != 0)
   {
     new_spiral->matrix = xmalloc(matrix_size * sizeof(*new_spiral->matrix),
                                  "Memory allocation failed for spiral matrix");
